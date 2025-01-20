@@ -5,7 +5,7 @@ description = "Navigating data from one thing to another."
 authors = [
     {name = "ppabam", email = "tom@diginori.com"},
 ]
-dependencies = ["pandas>=2.2.3", "president-speech>=0.9.1"]
+dependencies = ["pandas>=2.2.3", "president-speech>=0.9.1", "typer>=0.15.1"]
 requires-python = ">=3.10"
 readme = "README.md"
 license = {text = "MIT"}
@@ -28,4 +28,4 @@ test = [
 ]
 
 [project.scripts]
-eda-bam = "eda_bam.cli:group_by_count"
+eda-bam = "eda_bam.cli:entry_point"
