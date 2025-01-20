@@ -29,3 +29,7 @@ test = [
 
 [project.scripts]
 eda-bam = "eda_bam.cli:entry_point"
+
+[project.urls]
+Homepage = "https://github.com/ppabam/eda-bam"
+Issues = "https://github.com/ppabam/eda-bam/issues"
