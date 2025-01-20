@@ -5,7 +5,7 @@ description = "Navigating data from one thing to another."
 authors = [
     {name = "ppabam", email = "tom@diginori.com"},
 ]
-dependencies = []
+dependencies = ["pandas>=2.2.3"]
 requires-python = ">=3.10"
 readme = "README.md"
 license = {text = "MIT"}
