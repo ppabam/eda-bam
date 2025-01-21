@@ -1,6 +1,6 @@
 [project]
 name = "eda-bam"
-version = "0.3.0"
+version = "0.4.0"
 description = "Navigating data from one thing to another."
 authors = [
     {name = "ppabam", email = "tom@diginori.com"},
