@@ -10,6 +10,19 @@ def test_search_exception():
     assert isinstance(df, pd.DataFrame)
     assert len(df) < row_count
 
+@pytest.mark.parametrize("is_asc, president", [(True, "윤보선"), (False, "박정희")])
+def test_정열_및_행수제한(is_asc, president):
+    # given
+    row_count = 3
+    
+    # when
+    df = group_by_count(keyword="자유", asc=is_asc, rcnt=row_count)
+    
+    # then
+    assert isinstance(df, pd.DataFrame)
+    assert df.iloc[0]["president"] == president
+    assert len(df) == row_count
+
 def test_정열_및_행수제한():
     # given
     row_count = 3
@@ -22,7 +35,6 @@ def test_정열_및_행수제한():
     assert isinstance(df, pd.DataFrame)
     assert df.iloc[0]["president"] == "윤보선"
     assert len(df) == row_count
-
 presidents_speeches = {
     "박정희": 513,
     "이승만": 438,
