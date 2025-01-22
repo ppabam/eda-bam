@@ -1,5 +1,6 @@
 from eda_bam.cli import group_by_count
 import pandas as pd
+import pytest
 
 def test_search_exception():
     row_count = 13
@@ -36,10 +37,9 @@ presidents_speeches = {
     "최규하": 14,
     "윤보선": 1
 }
-import pytest
 
 @pytest.mark.parametrize("p_name, s_count", presidents_speeches.items())
-def test_default_args(p_name: str, s_count: int):
+def test_default_args_check_count_mark(p_name: str, s_count: int):
     # given
 
     # when
@@ -60,6 +60,20 @@ def test_default_args(p_name: str, s_count: int):
     assert president_row.iat[0, 1] == s_count
 
 
+def test_all_count():
+    # given
+    # global dict
+
+    # when
+    df = group_by_count("자유")
+    
+    # then
+    assert isinstance(df, pd.DataFrame)
+    assert len(df) == 12
+    
+    for p_name, s_count in presidents_speeches.items():
+        president_row = df[df["president"] == p_name]
+        assert president_row.iloc[0]["count"] == s_count
 
 
 
