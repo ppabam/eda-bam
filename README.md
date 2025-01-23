@@ -13,12 +13,17 @@ $ eda-bam --help
 
  Usage: eda-bam [OPTIONS] KEYWORD
 
-╭─ Arguments ───────────────────────────────────────────────────────╮
-│ *    keyword      TEXT  [default: None] [required]                │
-╰───────────────────────────────────────────────────────────────────╯
-╭─ Options ─────────────────────────────────────────────────────────╮
-│ --help          Show this message and exit.                       │
-╰───────────────────────────────────────────────────────────────────╯
+╭─ Arguments ────────────────────────────────────────────────────────╮
+│ *    keyword      TEXT  [default: None] [required]                 │
+╰────────────────────────────────────────────────────────────────────╯
+╭─ Options ──────────────────────────────────────────────────────────╮
+│ --asc            --no-asc                     [default: no-asc]    │
+│ --rcnt                               INTEGER  [default: 12]        │
+│ --keyword-sum    --no-keyword-sum             [default:            │
+│                                               no-keyword-sum]      │
+│ --help                                        Show this message    │
+│                                               and exit.            │
+╰────────────────────────────────────────────────────────────────────╯
 
 $ eda-bam 자유
 president  count
@@ -34,7 +39,14 @@ president  count
       박근혜    111
       최규하     14
       윤보선      1
+
+$ eda-bam 자유 --asc --rcnt 3 --keyword-sum
+president  count  keyword_sum
+      윤보선      1            6
+      최규하     14           28
+      박근혜    111          250
 ```
+
 
 ### DEV
 ```bash

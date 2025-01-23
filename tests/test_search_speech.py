@@ -135,7 +135,7 @@ def test_all_count_keyword_sum():
         count = df.loc[i, "count"]
         assert keyword_sum >= count
 
-    # 4
+    # 5
     for i in range(len(df)):
         keyword_sum = df.iat[i, 2]  # 첫 번째 열 (0번 인덱스)
         count = df.iat[i, 1]        # 두 번째 열 (1번 인덱스)
