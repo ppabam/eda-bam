@@ -102,8 +102,17 @@ def test_all_count_iat():
     for i, (p_name, s_count) in enumerate(presidents_speeches.items()):
         assert df.iat[i, 1] == s_count
 
+def test_all_count_keyword_sum():
+    # given
+    # global dict
 
-
-
-
+    # when
+    df = group_by_count(keyword="자유",
+                        keyword_sum=False
+                        )
+    
+    # then
+    assert isinstance(df, pd.DataFrame)
+    assert "keyword_sum" in df.columns
+    # count 보다 keyword_sum 이 크거나 같음을 확인 assert 
 
