@@ -49,6 +49,8 @@ def print_group_by_count(keyword: str, asc: bool=False, rcnt: int=12, keyword_su
 
     import termplotlib as tpl
     fig = tpl.figure()
+
+    ## TODO - keyword_sum 옵션이 활성회 돠면 keyword_sum 들어가게 하기
     fig.barh(df['count'], df['president'], force_ascii=True)
     fig.show()
 
