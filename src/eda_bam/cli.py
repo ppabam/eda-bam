@@ -38,9 +38,16 @@ def print_group_by_count(keyword: str, asc: bool=False, rcnt: int=12, keyword_su
     # 프로그래스바 추가 - df 의 컬럼숫자 * row숫자 + sleep
     r = len(df.columns) * len(df)
     for i in tqdm(range(r)):
-        time.sleep(0.5)
+        time.sleep(0.1)
 
-    print(df.to_string(index=False))
+    from tabulate import tabulate
+    if keyword_sum:
+        t = tabulate(df, headers=["president","count", "ks"], tablefmt='github')
+    else:
+        t = tabulate(df, headers=["president","count"], tablefmt='github')
+    print(t)
+    #print(df.to_string(index=False))
+    #print(tabulate(df))
 
 
 def entry_point():
