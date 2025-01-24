@@ -41,10 +41,8 @@ def print_group_by_count(keyword: str, asc: bool=False, rcnt: int=12, keyword_su
         time.sleep(0.1)
 
     from tabulate import tabulate
-    if keyword_sum:
-        t = tabulate(df, headers=["president","count", "ks"], tablefmt='github')
-    else:
-        t = tabulate(df, headers=["president","count"], tablefmt='github')
+    hs = ["president","count"]
+    t = tabulate(df, headers=df.columns, tablefmt='github', showindex=False)
     print(t)
     #print(df.to_string(index=False))
     #print(tabulate(df))
