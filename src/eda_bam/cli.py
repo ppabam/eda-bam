@@ -47,6 +47,11 @@ def print_group_by_count(keyword: str, asc: bool=False, rcnt: int=12, keyword_su
     #print(df.to_string(index=False))
     #print(tabulate(df))
 
+    import termplotlib as tpl
+    fig = tpl.figure()
+    fig.barh(df['count'], df['president'], force_ascii=True)
+    fig.show()
+
 
 def entry_point():
     typer.run(print_group_by_count)
